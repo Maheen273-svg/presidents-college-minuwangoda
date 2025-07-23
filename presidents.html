@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>President's College Minuwangoda ❤ </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --maroon: #800000;
+      --yellow: #ffcc00;
+      --bg-light: #f9f9f9;
+      --text-light: #333;
+      --bg-dark: #121212;
+      --text-dark: #eee;
+      --accent-dark: #ffcc00;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s, opacity 0.5s ease;
+      opacity: 0; /* start hidden for fade-in */
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: var(--maroon);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    header img {
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 2px solid var(--yellow);
+      background: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px #00000080;
+    }
+
+    nav {
+      background: var(--maroon);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.75rem 0;
+      transition: background 0.3s;
+    }
+
+    nav a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      transition: color 0.3s;
+    }
+
+    h2 {
+      color: var(--maroon);
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark-mode h2 {
+      color: var(--accent-dark);
+    }
+
+    .motto {
+      font-style: italic;
+      margin: 1rem 0 2rem 0;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #444;
+      transition: color 0.3s;
+    }
+
+    body.dark-mode .motto {
+      color: #bbb;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .pictures {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .pictures img {
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .pictures img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: var(--maroon);
+      color: var(--yellow);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode footer {
+      background: #3a0000;
+      color: var(--accent-dark);
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--maroon);
+      color: var(--yellow);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.3);
+      transition: background 0.3s, color 0.3s;
+      z-index: 1000;
+    }
+
+    .theme-toggle:hover {
+      background: var(--yellow);
+      color: var(--maroon);
+    }
+
+    body.dark-mode .theme-toggle {
+      background: #3a0000;
+      color: var(--accent-dark);
+    }
+
+    body.dark-mode .theme-toggle:hover {
+      background: var(--accent-dark);
+      color: #3a0000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-bar">
+  <a href="presidents.html" class="floating-icon" title="Home">
+    🏠 <span class="label">Home</span>
+  </a>
+  <a href="about.html" class="floating-icon" title="About">
+    📖 <span class="label">About</span>
+  </a>
+  <a href="activities.html" class="floating-icon" title="Activities">
+    🏅 <span class="label">Activities</span>
+  </a>
+  <a href="add.html" class="floating-icon" title="Admissions">
+    📝 <span class="label">Admissions</span>
+  </a>
+  <a href="contact.html" class="floating-icon" title="Contact">
+    📞 <span class="label">Contact</span>
+  </a>
+</div>
+<style>.floating-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--maroon);
+  padding: 0.4rem 0.6rem;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  gap: 1rem;
+  z-index: 999;
+}
+
+.floating-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--yellow);
+  text-decoration: none;
+  font-size: 1.5rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.floating-icon:hover {
+  transform: scale(1.2);
+}
+
+.floating-icon .label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.floating-icon:hover .label {
+  opacity: 1;
+}
+
+/* Mobile tap support */
+@media (hover: none) {
+  .floating-icon:active .label {
+    opacity: 1;
+  }
+}
+</style>
+<button class="theme-toggle" onclick="toggleTheme()">🌞</button>
+
+  <header>
+    <img src="images(19).png" alt="President's College Logo" />
+    <h1>President's College Minuwangoda</h1>
+  </header>
+
+  <nav>
+    <a href="presidents.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="activities.html">Activities</a>
+    <a href="contact.html">Contact</a>
+    <a href="add.html">Admission</a>
+
+  </nav>
+
+  <main>
+    <h2></h2>
+    <p class="motto">“අභිමානයෙන් පෙරට යමු”</p>
+    <p>Established in 1979, President's College Minuwangoda is one of the leading provincial schools in Sri Lanka, known for academic excellence, active extracurricular programs, and a vibrant student community.</p>
+    <p>Our mission is to nurture talented students through quality education and holistic development.</p>
+
+    <h2>Key Information</h2>
+    <hr>
+    <hr>
+    <ul>
+      <li><strong>Location:</strong> Colombo Road, Minuwangoda, Gampaha District</li>
+      <li><strong>Grades:</strong> 6 to 13</li>
+      <li><strong>Gender:</strong> Coeducational</li>
+      <li><strong>School Colors:</strong> Maroon and Yellow</li>
+      <li><strong>Motto:</strong> Advance with Pride</li>
+    </ul>
+ <h2>Latest Upadates</h2>
+    <div class="pictures">
+      <img src="img/school_building.jpg" alt="latest Buildings" title="School Building" />
+      <img src="img/sports_event.jpg" alt="Sports Events" title="Sports Event" />
+      <img src="WhatsApp Image 2025-06-10 at 8.14.10 PM.jpeg" alt="latest archives" title="Scouting Activity" />
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 President's College Minuwangoda  | All rights reserved
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const btn = document.querySelector('.theme-toggle');
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        btn.textContent = '🌙'; // moon for dark mode
+      } else {
+        localStorage.setItem('theme', 'light');
+        btn.textContent = '🌞'; // sun for light mode
+      }
+    }
+
+    // Fade in on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('.theme-toggle');
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        btn.textContent = '🌙';
+      } else {
+        btn.textContent = '🌞';
+      }
+
+      document.body.classList.add('fade-in');
+    });
+
+    // Fade out on link click then navigate
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        // Only fade for internal links
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // match CSS opacity transition
+        }
+      });
+    });
+  </script>
+</body>
+</html>
